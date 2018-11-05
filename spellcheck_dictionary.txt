@@ -1,0 +1,17 @@
+NATURAL:
+mmbed
+mbed
+greentea
+htrun
+lstools
+icetea
+
+pypi
+github
+
+https
+
+codebase
+deliverables
+versioning
+versioned
