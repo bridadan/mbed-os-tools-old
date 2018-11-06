@@ -1,17 +1,47 @@
 NATURAL:
+# Arm words
 mmbed
 mbed
+mbeds
 greentea
 htrun
 lstools
 icetea
+mbedls
+daplink
 
+# Other product-related words
 pypi
 github
+apache
+jlink
+atmel
+stlink
 
+# Python related
+staticmethod
+abstractmethod
+metaclass
+functools
+sortby
+prettytable
+hrules
+returncode
+
+# Technical jargon
 https
 
+# Irregular english
 codebase
 deliverables
 versioning
 versioned
+retarget
+retargeting
+
+# Other
+atmlxxxxyyyyyyy
+xxxx
+
+# Can be removed once list_mbeds_by_targetid() is removed
+targetid

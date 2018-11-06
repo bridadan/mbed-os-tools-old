@@ -77,7 +77,7 @@ class MbedLsToolsBase(object):
     }
 
     def __init__(self, list_unmounted=False, **kwargs):
-        """ ctor
+        """ Constructor
         """
         self.retarget_data = {}          # Used to retarget mbed-enabled platform properties
 
@@ -128,7 +128,7 @@ class MbedLsToolsBase(object):
           Ex. mbeds = list_mbeds(filter_function=lambda m: m['platform_name'] == 'K64F')
         @param unique_names A boolean controlling the presence of the
           'platform_unique_name' member of the output dict
-        @param read_details_txt A boolean controlling the presense of the
+        @param read_details_txt A boolean controlling the presence of the
           output dict attributes read from other files present on the 'mount_point'
         @details Function returns list of dictionaries with mbed attributes 'mount_point', TargetID name etc.
         Function returns mbed list with platform names if possible
@@ -213,7 +213,7 @@ class MbedLsToolsBase(object):
     def _update_device_from_fs(self, device, read_details_txt):
         """ Updates the device information based on files from its 'mount_point'
             @param device Dictionary containing device information
-            @param read_details_txt A boolean controlling the presense of the
+            @param read_details_txt A boolean controlling the presence of the
               output dict attributes read from other files present on the 'mount_point'
         """
         if not device.get('mount_point', None):
@@ -224,7 +224,7 @@ class MbedLsToolsBase(object):
             device['directory_entries'] = directory_entries
             device['target_id'] = device['target_id_usb_id']
 
-            # Always try to update using daplink compatible boards processself.
+            # Always try to update using the daplink compatible boards process.
             # This is done for backwards compatibility.
             self._update_device_details_daplink_compatible(device, read_details_txt)
 
@@ -253,7 +253,7 @@ class MbedLsToolsBase(object):
     def _update_device_details_daplink_compatible(self, device, read_details_txt):
         """ Updates the daplink-specific device information based on files from its 'mount_point'
             @param device Dictionary containing device information
-            @param read_details_txt A boolean controlling the presense of the
+            @param read_details_txt A boolean controlling the presence of the
               output dict attributes read from other files present on the 'mount_point'
         """
         lowercase_directory_entries = [e.lower() for e in device['directory_entries']]
@@ -339,7 +339,7 @@ class MbedLsToolsBase(object):
     def _update_device_details_atmel(self, device, _):
         """ Updates the Atmel device information based on files from its 'mount_point'
             @param device Dictionary containing device information
-            @param read_details_txt A boolean controlling the presense of the
+            @param read_details_txt A boolean controlling the presence of the
               output dict attributes read from other files present on the 'mount_point'
         """
 
@@ -388,7 +388,7 @@ class MbedLsToolsBase(object):
 
     def retarget_read(self):
         """! Load retarget data from local file
-        @return Curent retarget configuration (dictionary)
+        @return Current retarget configuration (dictionary)
         """
         if os.path.isfile(self.RETARGET_FILE_NAME):
             logger.debug("reading retarget file %s", self.RETARGET_FILE_NAME)
@@ -489,7 +489,7 @@ class MbedLsToolsBase(object):
     def __str__(self):
         """! Object to string casting
 
-        @return Stringified class object should be prettytable formated string
+        @return Class object should be prettytable formatted string
         """
         return self.get_string()
 
@@ -538,8 +538,8 @@ class MbedLsToolsBase(object):
                 except ValueError as json_error_msg:
                     logger.error("Parsing file(%s): %s", json_spec_filename, json_error_msg)
                     return None
-        except IOError as fileopen_error_msg:
-            logger.warning(fileopen_error_msg)
+        except IOError as open_error_msg:
+            logger.warning(open_error_msg)
             return None
 
     @deprecated("This method will be removed from the public API. "
@@ -588,7 +588,7 @@ class MbedLsToolsBase(object):
             version_str, build_str = m.groups()
             return (version_str.strip(), build_str.strip())
 
-        # <!-- Version: 0219 Build: Feb  2 2016 15:20:54 Git Commit SHA: 0853ba0cdeae2436c52efcba0ba76a6434c200ff Git local mods:No-->
+        # <!-- Version: 0219 Build: Feb  2 2016 15:20:54 Git Commit SHA: 0853ba0cd0ae2436c52ef8ba0ba76a6434c200ff Git local mods:No-->
         m = re.search(r'^<!-- Version: (\d+) Build: ([\d\w: ]+) Git Commit SHA', line)
         if m:
             version_str, build_str = m.groups()
