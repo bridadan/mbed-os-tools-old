@@ -35,4 +35,6 @@ line tool (see below).
 """
 
 from .main import create
+from .mbed_device import MbedDevice
+from .usb_device import UsbDevice
 
