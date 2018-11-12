@@ -10,8 +10,18 @@ class UsbDevice(object):
 
     @abstractmethod
     def mount_point(self):
+    '''Query the system for the mount point associated with the UsbDevice
+
+    @return If mounted, a string of the mount point.
+    Otherwise, None.
+    '''
         raise NotImplementedError
 
     @abstractmethod
     def serial_port(self):
+    '''Query the system for the serial port associated with the UsbDevice
+
+    @return If a serial port exists, a string representing the serial port.
+    Otherwise, None.
+    '''
         raise NotImplementedError

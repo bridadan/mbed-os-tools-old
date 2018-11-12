@@ -29,8 +29,9 @@ _USB_DEVICE_ATTRS = {
     '{}.return_value'.format(p): p for p in _USB_DEVICE_PROPERTIES
 }
 
-class MbedDeviceTestCase(unittest.TestCase):
 
+class MbedDeviceTestCase(unittest.TestCase):
+    '''Tests for the MbedDevice class'''
 
     def test_construct_default_update_true(self):
         '''
