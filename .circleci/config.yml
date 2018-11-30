@@ -9,6 +9,9 @@ commands:
             - run:
                 name: Run tests
                 command: python -m coverage run setup.py test
+            - run:
+                name: Send coverage results to coveralls
+                command: coveralls
     enforce_style:
         steps:
             - checkout
